@@ -1,0 +1,44 @@
+$font-stack: "Noto Sans TC";
+$font-size: 16px;
+
+body {
+  font-family: $font-stack;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p
+ {
+  font-size: $font-size;
+  line-height: 1.5;
+  color: $text;
+}
+
+// -------------- 字型大小 ----------------
+// #{(瀏覽器預設px * 定義好的rem)};
+$h1: #{($font-size * 1.4375)}; // 23px
+$h2: #{($font-size * 1.25)}; // 20px
+$h3: #{($font-size * 1.125)}; // 18px
+$h5: #{($font-size * 2.4)}; // 24px
+$h6: #{($font-size * 1.6)}; // 16px
+// $p: //14px
+
+h1 {
+  font-size: $h1;
+};
+
+h2 {
+  font-size: $h2;
+};
+
+h3 {
+  font-size: $h3;
+}
+
+h5 {
+  font-size: $h5;
+}

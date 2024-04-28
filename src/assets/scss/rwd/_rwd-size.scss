@@ -1,0 +1,50 @@
+// rwd 尺寸
+$px1440: 1440px;
+$px1024: 1024px;
+$px768: 768px;
+
+@mixin wrapper(){
+    max-width: 90%;
+    margin: auto;
+    @content
+}
+
+@mixin over1440(){
+    @media screen and (min-width: $px1440) {
+        @content;
+    }
+}
+
+@mixin px1440_to_1024(){
+    @media screen and (max-width: $px1440) and (min-width: $px1024){
+        @content;
+    }
+}
+
+@mixin px1024_to_768(){
+    @media screen and (max-width: $px1024) and (min-width: $px768){
+        @content;
+    }
+}
+
+@mixin then768(){
+    @media screen and (max-width: $px768) {
+        @content;
+    }
+}
+
+// RWD尺寸下，css attributes傳遞進去的數值
+@mixin attributes-RWD($pptyname, $size1, $size2, $size3, $size4,){
+    @include over1440(){
+        #{$pptyname}: $size1;
+    }
+    @include px1440_to_1024(){
+        #{$pptyname}: $size2;
+    }
+    @include px1024_to_768(){
+        #{$pptyname}: $size3;
+    }
+    @include then768(){
+        #{$pptyname}: $size4;
+    }    
+}
